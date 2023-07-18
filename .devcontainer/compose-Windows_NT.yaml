@@ -1,0 +1,26 @@
+# docker compose file to start windows specific services in development environment
+services:
+  # the workspace container which is used in VSCode on Windows
+  workspace:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        WORKSPACE: "/home/ros/workspace"
+    cap_add:
+      - SYS_PTRACE
+    environment:
+      DISPLAY: :0
+      # Needed for rendering of opengl
+      LIBGL_ALWAYS_SOFTWARE: 1
+      LIBGL_ALWAYS_INDIRECT: 0
+      # for windows audio 
+      PULSE_SERVER: /tmp/PulseServer
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    user: ros
+    volumes:
+      - ..:/home/ros/workspace
+      # for windows audio/video
+      - \\wsl.localhost\Ubuntu\mnt\wslg:/tmp

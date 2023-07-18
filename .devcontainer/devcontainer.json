@@ -1,0 +1,41 @@
+// See https://aka.ms/vscode-remote/devcontainer.json for format details.
+{
+	"name": "TheHomeBots",
+	"dockerComposeFile": [
+//		"compose-common.yaml",
+		// on Linux ${localEnv:OS} will evolve to "" on Window to "Windows_NT"
+		"compose-${localEnv:OS}.yaml"
+	],
+	"runServices": [
+		"workspace"
+	],
+	"service":  "workspace",
+	"workspaceFolder": "/home/ros/workspace",
+	"remoteUser": "ros",
+	"containerUser": "ros",
+	"updateRemoteUserUID": true,
+	// customizations when the container is created
+	"customizations": {
+			"vscode": {
+					"settings": {
+							"terminal.integrated.profiles.linux": {
+									"bash": {
+											"path": "bash"
+									}
+							},
+							"terminal.integrated.defaultProfile.linux": "bash"
+					},
+					"extensions": [
+							"althack.ament-task-provider",
+							"ms-iot.vscode-ros",
+							"ms-python.python",
+							"ms-vscode.cmake-tools",
+							"ms-vscode.cpptools",
+							"ms-vscode.cpptools-extension-pack",
+							"ms-vscode.cpptools-themes",
+							"streetsidesoftware.code-spell-checker",
+							"zachflower.uncrustify"
+					]
+			}
+	}
+}

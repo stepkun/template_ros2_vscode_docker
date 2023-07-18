@@ -1,0 +1,8 @@
+# build results
+build/
+install/
+log/
+__pycache__
+
+# subdirs below src
+#src/**

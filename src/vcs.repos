@@ -1,0 +1,14 @@
+# List of repositories to use within your workspace
+# See https://github.com/dirk-thomas/vcstool
+############ 
+# Examples:
+############
+repositories:
+  https-example:
+    type: git
+    url: https://github.com/organization/repository.git
+    version: humble
+  ssh-example:
+    type: git
+    url: git@github.com:organization/repository.git
+    version: main
