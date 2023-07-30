@@ -7,23 +7,27 @@ services:
       dockerfile: ./Dockerfile
       args:
         WORKSPACE: "/home/ros/workspace"
+        USER: "ros"
     cap_add:
       - SYS_PTRACE
     environment:
       DISPLAY: :0
+      WAYLAND_DISPLAY: :0
       # Needed for rendering of opengl
       LIBGL_ALWAYS_SOFTWARE: 1
       LIBGL_ALWAYS_INDIRECT: 0
-      # for unix audio 
+      # for unix audio / video
       PULSE_SERVER: unix:/run/user/${UID}/pulse/native
+      XDG_RUNTIME_DIR: /run/user/${UID}
     security_opt:
       - seccomp:unconfined
       - apparmor:unconfined
     user: ros
     volumes:
       - ..:/home/ros/workspace
-      # for unix audio/video
+      # for unix audio / video
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/${UID}:/run/user/${UID}
       - /etc/alsa:/etc/alsa
       - /usr/share/alsa:/usr/share/alsa
       - ~/.config/pulse:/.config/pulse

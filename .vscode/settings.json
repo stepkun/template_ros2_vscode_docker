@@ -2,7 +2,7 @@
   // inspired by https://github.com/athackst/vscode_ros2_workspace/blob/humble/.vscode/settings.json
   "editor.tabSize": 2,
   "editor.rulers": [
-      90
+      100
   ],
   "files.associations": {
     "*.repos": "yaml",

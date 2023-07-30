@@ -1,4 +1,4 @@
-FROM stepkun/vulcanexus:humble-full 
+FROM stepkun/vulcanexus:iron-full 
 
 # set timezone
 ENV TZ="Europe/Berlin"
@@ -17,10 +17,11 @@ ENV TZ="Europe/Berlin"
 
 # Set up auto-source of workspace for ros user
 ARG WORKSPACE
-RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/ros/.bashrc \
-  && echo "export ROS_LOCALHOST_ONLY=0" >> /home/ros/.bashrc
+ARG USER
+RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/$USER/.bashrc \
+  && echo "export ROS_LOCALHOST_ONLY=0" >> /home/$USER/.bashrc
 
 WORKDIR $WORKSPACE
-USER ros
+USER $USER
 # default CMD to startup container
 CMD /bin/sh -c "while sleep 1000; do :; done"
