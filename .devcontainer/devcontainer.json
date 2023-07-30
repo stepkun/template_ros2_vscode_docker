@@ -1,6 +1,6 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
-	"name": "TheHomeBots",
+	"name": "template",
 	"dockerComposeFile": [
 //		"compose-common.yaml",
 		// on Linux ${localEnv:OS} will evolve to "" on Window to "Windows_NT"
