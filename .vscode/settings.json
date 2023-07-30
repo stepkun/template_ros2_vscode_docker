@@ -1,5 +1,5 @@
 {
-  // inspired by https://github.com/athackst/vscode_ros2_workspace/blob/humble/.vscode/settings.json
+  // inspired by https://github.com/athackst/vscode_ros2_workspace/blob/iron/.vscode/settings.json
   "editor.tabSize": 2,
   "editor.rulers": [
       100
@@ -21,16 +21,16 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.autoComplete.extraPaths": [
     "/home/ros/workspace/install/local/lib/python3.10/dist-packages",
-    "/opt/vulcanexus/humble/local/lib/python3.10/dist-packages",
-    "/opt/vulcanexus/humble/lib/python3.10/site-packages",
-    "/opt/ros/humble/lib/python3.10/site-packages",
-    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    "/opt/vulcanexus/iron/local/lib/python3.10/dist-packages",
+    "/opt/vulcanexus/iron/lib/python3.10/site-packages",
+    "/opt/ros/iron/lib/python3.10/site-packages",
+    "/opt/ros/iron/local/lib/python3.10/dist-packages"
   ],
   "python.analysis.extraPaths": [
     "/home/ros/workspace/install/local/lib/python3.10/dist-packages",
-    "/opt/vulcanexus/humble/local/lib/python3.10/dist-packages",
-    "/opt/vulcanexus/humble/lib/python3.10/site-packages",
-    "/opt/ros/humble/lib/python3.10/site-packages",
-    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    "/opt/vulcanexus/iron/local/lib/python3.10/dist-packages",
+    "/opt/vulcanexus/iron/lib/python3.10/site-packages",
+    "/opt/ros/iron/lib/python3.10/site-packages",
+    "/opt/ros/iron/local/lib/python3.10/dist-packages"
   ],
 }
