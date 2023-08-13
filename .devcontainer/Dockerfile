@@ -4,6 +4,7 @@ FROM stepkun/vulcanexus:iron-full
 ENV TZ="Europe/Berlin"
 
 # ** [Optional] Uncomment this section to install additional packages. **
+#USER root
 #
 # ENV DEBIAN_FRONTEND=noninteractive
 # RUN apt-get update \
@@ -21,7 +22,9 @@ ARG USER
 RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/$USER/.bashrc \
   && echo "export ROS_LOCALHOST_ONLY=0" >> /home/$USER/.bashrc
 
-WORKDIR $WORKSPACE
+# open with non root user
 USER $USER
+WORKDIR $WORKSPACE
+
 # default CMD to startup container
 CMD /bin/sh -c "while sleep 1000; do :; done"
